@@ -25,6 +25,10 @@ except:
 	print("not found")
 	# driver.quit()
 
+
+show_more = element.find_element(By.XPATH, '//div[@class="css-t3xrds e856ufb5"]')
+show_more.click()
+
 paragraphs = element.find_elements_by_tag_name("p")
 for paragraph in paragraphs:
     print(paragraph.text)
