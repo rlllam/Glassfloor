@@ -5,8 +5,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-PATH = "C:\Program Files (x86)\chromedriver.exe"
-driver = webdriver.Chrome(PATH)
+driver = webdriver.Firefox()
+
 driver.get("https://www.glassdoor.com/bigppbrothers")
 
 # Select the search bar
