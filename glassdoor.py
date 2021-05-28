@@ -17,6 +17,11 @@ keyword = "Space Vehicle Controller/Engineer - Entry Level"
 search.send_keys(keyword)
 search.send_keys(Keys.RETURN)
 
+time.sleep(10)
+
+clickThis = driver.find_element(By.XPATH, "//div[@class='css-t3xrds e856ufb5']")
+clickThis.click()
+
 try:
     element = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.ID, "JobDescriptionContainer"))
