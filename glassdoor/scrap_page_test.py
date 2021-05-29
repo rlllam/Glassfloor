@@ -6,6 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
+start_time = time.time()
+
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 
 JOB_SEARCH_BAR_ID = "sc.keyword"
@@ -78,7 +80,7 @@ def scrap_job_desc(job_box):
 
     click_show_more(show_more)
 
-    # WebDriver will wait until the job desciption is found
+    # WebDriver will wait 20 seconds until the job desciption is found
     job_description = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.ID, JOB_DESC_CONTAINER_ID)))
 
@@ -88,7 +90,7 @@ def scrap_job_desc(job_box):
 def scrap_page():
     """
     Scrap all job descriptions (as strings) on the current page and
-    put them into the "scrapped_job_desc" list.
+    put them into the "scrapped_page" list.
     """
 
     # WebDriver will wait 20 seconds until the job list is found
@@ -102,8 +104,12 @@ def scrap_page():
 
     return scrapped_page
 
-scrap_page()
-driver.__exit__()
-# for index, job_description in enumerate(scrap_page()):
-#     print(str(index+1) + ". " + job_description + "\n")
 
+job_desc_list = scrap_page()
+driver.close()
+time_taken = time.time() - start_time
+
+for index, job_desc in enumerate(job_desc_list):
+    print(str(index+1) + ". " + job_desc + "\n")
+
+print(str(len(job_desc_list)) + " entries in total\nTime Taken: " + str(time_taken))

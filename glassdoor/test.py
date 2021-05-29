@@ -1,7 +1,7 @@
-def test(n):
-	if n >= 10:
-		print(n)
-	else:
-		raise Exception("Less than 10")
+import locale;
 
-test(10)
+print(locale.getpreferredencoding())
+
+
+print('\uFFFD')
+print('\u200d')
