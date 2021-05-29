@@ -4,10 +4,21 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud, STOPWORDS
 
 driver = webdriver.Firefox()
 
 driver.get("https://www.glassdoor.com/bigppbrothers")
+
+wc = WordCloud( ## declare a Wordcloud
+    background_color = 'white',
+    stopwords = STOPWORDS, ## words that we want to ignore
+    height = 600,
+    width = 400
+)
+
+all_text = "" ## variable for all scraped texts
 
 # Select the search bar
 search = driver.find_element_by_id("sc.keyword")
@@ -33,8 +44,16 @@ except:
 paragraphs = element.find_elements_by_tag_name("p")
 for paragraph in paragraphs:
     print(paragraph.text)
+    all_text = all_text + " " + paragraph.text ## added scraped text to all_text
 
-# try:
-#     print(str(driver.page_source))
-# except:
-#     print("error")
+print(all_text)
+
+wc.generate(all_text) ## put all_text to wc
+
+## shows wordclound
+plt.imshow(wc, interpolation='bilinear')
+plt.axis("off")
+plt.show()
+
+
+# wc.to_file('wordcloud_output.png') ## outputs wordcloud as .png file
