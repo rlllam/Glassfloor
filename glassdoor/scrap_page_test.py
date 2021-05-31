@@ -74,7 +74,7 @@ def scrap_job_desc(job_box):
 
     job_box.click()
 
-    #  WebDriver will wait 20 seconds until "Show More" is found
+    #  WebDriver will wait 20 seconds until "Click More is found"
     show_more = WebDriverWait(driver, 20).until(
     EC.presence_of_element_located((By.XPATH, SHOW_MORE_XPATH)))
 
