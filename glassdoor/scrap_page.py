@@ -16,8 +16,8 @@ LOCATION_SEARCH_BAR_ID = "sc.location"
 """
 In "JOB_BOX_COMMON_XPATH_SYNTAX":
 1. "li" has indices that start from 1.
-2. If "li" is provided an index, the XPATH refers to a clickable job box.
-3. If "li" is not provided an index, the XPATH reference all indices
+2. If "li" is provided an index, the XPATH references a clickable job box.
+3. If "li" is not provided an index, the XPATH references all indices
 """
 JOB_BOX_COMMON_XPATH_SYNTAX = "//*[@id='MainCol']/div[1]/ul/li"
 
@@ -89,11 +89,10 @@ def scrap_job_desc(job_box):
 
 def scrap_page():
     """
-    Scrap all job descriptions (as strings) on the current page and
-    put them into the "scrapped_page" list.
+    Returns all job descriptions on the current page as an array of strings.
     """
 
-    # WebDriver will wait 20 seconds until the job list is found
+    # WebDriver will wait 20 seconds until the job box list is found
     job_box_list = WebDriverWait(driver, 20).until(
         EC.presence_of_all_elements_located((By.XPATH, JOB_BOX_COMMON_XPATH_SYNTAX)))
 
