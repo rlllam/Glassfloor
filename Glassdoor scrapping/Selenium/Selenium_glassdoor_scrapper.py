@@ -111,7 +111,7 @@ def scrap_job_desc(job_box):
          # WebDriver will wait 20 seconds until the job desciption is found and store it
             job_description = WebDriverWait(driver, 20).until(
                 EC.presence_of_element_located((By.ID, JOB_DESC_CONTAINER_ID)))
-            return job_description.text
+            return job_description.text # Return statement sometimes raises StaleElementReferenceException
 
         except exceptions.StaleElementReferenceException:
             pass
