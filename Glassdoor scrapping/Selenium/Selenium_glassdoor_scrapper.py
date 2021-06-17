@@ -1,3 +1,4 @@
+# This script was made on ChromeDriver 90.0.4430.24
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -5,9 +6,6 @@ from selenium.common import exceptions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-
-# ChromeDriver 90.0.4430.24
-PATH = "C:\Program Files (x86)\chromedriver.exe"
 
 """
 In "JOB_BOX_COMMON_XPATH_SYNTAX":
@@ -25,9 +23,6 @@ SHOW_MORE_XPATH = "//*[@id='JobDescriptionContainer']/div[2]"
 
 PAGE_BUTTON_XPATH_COMMON_SYNTAX = "//*[@id='FooterPageNav']/div/ul/li"
 
-# Set webdriver to chrome
-driver = webdriver.Chrome(PATH)
-driver.minimize_window()
 
 def check_exists_by_xpath(xpath):
     """
@@ -131,7 +126,8 @@ def go_to_next_page():
             return True
 
         # If there is an exception, refresh the current page and retry
-        except:
+        except Exception as e:
+            print("Error:\n" + str(e) + "\nRefreshing page...\n")
             driver.get(driver.current_url)
 
 def scrap_page():
@@ -157,13 +153,13 @@ def scrap_page():
             break
 
         # If there is an exception, refresh the current page and retry
-        except:
+        except Exception as e:
+            print("Error:\n" + str(e) + "\nRefreshing page...\n")
             driver.get(driver.current_url)
     
-
     return scrapped_page
 
-def scrap(keyword, location, pages_to_scape=1):
+def scrap(keyword, location, pages_to_scrape=1):
     """
     Returns an array of job descriptions as strings.
     """
@@ -174,36 +170,52 @@ def scrap(keyword, location, pages_to_scape=1):
     driver.get("https://www.glassdoor.com/Job/jobs.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword="
         + keyword +
         "&typedLocation=" + location +
-        "&locT=N&locId=3&jobType=&context=Jobs&sc.keyword=Software+Engineer&dropdown=0")
+        "&locT=N&locId=3&jobType=&context=Jobs" +
+        "&sc.keyword=" + keyword + "&dropdown=0")
 
     scrapped_job_descriptions = []
 
-    for i in range(pages_to_scape):
+    for i in range(pages_to_scrape):
         print(f"\nScrapping page {str(i+1)}...\n")
 
         scrapped_job_descriptions += scrap_page()
         pages_scaped = i+1
 
-        if pages_scaped < pages_to_scape:
+        if pages_scaped < pages_to_scrape:
             page_exist = go_to_next_page()
             if not page_exist:
                 break
 
+    driver.quit()
+
     # Record time it took to run scrap()
     time_taken = time.time() - start_time
-    print("\n" + str(len(scrapped_job_descriptions)) + " entries in total\nTime Taken: " + str(time_taken))
+    print("\nTotal jobs scrapped: " + str(len(scrapped_job_descriptions)) + "\nTime Taken: " + str(time_taken))
 
     return scrapped_job_descriptions
 
 
+# ChromeDriver 90.0.4430.24
+DRIVER_PATH = "C:\Program Files (x86)\chromedriver.exe"
 
-"""
-1. Scrap job descriptions on glassdoor by providing: keyword, location, pages_to_scrape (default is 1).
-2. Store the resulting array in 'scrapped_desc'.
-"""
-scrapped_desc = scrap('software', 'canada', 10)
-driver.quit()
+'''
+Headless option
+'''
+# from selenium.webdriver.chrome.options import Options
+# options = Options()
+# options.headless = True
+# options.add_argument("--window-size=1920,1200")
+# driver = webdriver.Chrome(options=options, executable_path=DRIVER_PATH)
 
-# Format the output and print it
+'''
+Default option
+'''
+driver = webdriver.Chrome(DRIVER_PATH)
+driver.minimize_window() # Option to start minimized
+
+# Run main function
+scrapped_desc = scrap(keyword='asdgdsag', location='Japan', pages_to_scrape=10)
+
+# Format the output then print it
 # for idx, job_desc in enumerate(scrapped_desc):
 #         print(str(idx+1) + ". " + job_desc + "\n")
