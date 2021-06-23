@@ -6,7 +6,9 @@ Jupyter Notebook
 
 Power BI
 
-## Dependencies for scraper:
+## Scraper:
+
+### Dependencies:
 selenium==3.141.0
 
 ### Driver used:
