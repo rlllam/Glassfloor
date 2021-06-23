@@ -1,7 +1,12 @@
 # GlassFloor
 A scraping and analysis project on Glassdoor.
 
-# Dependencies for scraper:
+## Analysis tools:
+Jupyter Notebook
+
+Power BI
+
+## Dependencies for scraper:
 selenium==3.141.0
 
 ### Driver used:
