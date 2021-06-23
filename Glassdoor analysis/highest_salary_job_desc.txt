@@ -1,0 +1,26 @@
+Master's degree in Electrical Engineering, Computer Sciences, or Mathematics with specialization in speech recognition, natural language processing, image processing, or machine learning.
+3+ years relevant industry experience
+Experience with programming languages such as C/C++, Python, Java or Perl.
+Amazon is looking for a passionate, talented, and inventive Scientist with a strong machine learning background to help build industry-leading Speech and Language technology. Our mission is to push the envelope in Automatic Speech Recognition (ASR), Natural Language Understanding (NLU), and Audio Signal Processing, in order to provide the best-possible experience for our customers.
+
+As a Scientist, you will work with talented peers to develop novel algorithms and modeling techniques to advance the state of the art in spoken language understanding. Your work will directly impact our customers in the form of products and services that make use of speech and language technology. You will leverage Amazonâ€™s heterogeneous data sources and large-scale computing resources to accelerate advances in spoken language understanding.
+
+We are hiring in all areas of spoken language understanding: ASR, NLU, text-to-speech (TTS), and Dialog Management.
+
+Position Responsibilities:
+Participate in the design, development, evaluation, deployment and updating of data-driven models and analytical solutions for machine learning (ML) and/or natural language (NL) applications.
+Develop and/or apply statistical modeling techniques (e.g. Bayesian models and deep neural networks), optimization methods, and other ML techniques to different applications in business and engineering.
+Routinely build and deploy ML models on available data.
+Research and implement novel ML and statistical approaches to add value to the business. Mentor junior engineers and scientists.
+PhD in Electrical Engineering, Computer Sciences, or Mathematics with specialization in speech recognition, natural language processing, or machine learning.
+Experience in building speech recognition and natural language processing systems (e.g. commercial speech products or government speech projects)
+Solid Machine Learning background and familiar with standard speech and machine learning techniques.
+Proficient in neural network and/or deep learning are pluses.
+Scientific thinking and the ability to invent, a track record of thought leadership and contributions that have advanced the field
+Solid software development experience
+Good written and spoken communication skills.
+To learn more about the Digital Products team at Amazon, visithttp://www.amazon.com/careers/digitalproducts and apply now.
+
+Amazon is committed to providing employment accommodation in accordance with the Ontario Human Rights Code and the Accessibility for Ontarians with Disabilities Act. If contacted for an employment opportunity, please advise Human Resources if you require accommodation.
+To apply to this job, click Apply Now
+Show Less
