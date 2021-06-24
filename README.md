@@ -1,4 +1,4 @@
-# GlassFloor
+# Glassfloor
 A scraping and analysis project on Glassdoor
 
 ## Overview:
