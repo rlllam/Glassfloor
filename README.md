@@ -17,4 +17,4 @@ Jupyter Notebook
 Power BI
 
 ## Analysis Sample:
-![alt text](https://github.com/rlllam/Glassfloor/blob/master/Glassdoor%20analysis/Power%20BI/sample%20analysis/1.png?raw=true)
+![alt text](https://github.com/rlllam/Glassfloor/blob/master/Glassdoor%20analysis/Power%20BI/sample%20analysis/glassdoor%20analysis_Page_1.png)
