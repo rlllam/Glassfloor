@@ -1,7 +1,7 @@
 # GlassFloor
+A scraping and analysis project on Glassdoor
 
 ## Overview:
-A scraping and analysis project on Glassdoor.
 1. Scrap search results
 2. Create analysis
 
