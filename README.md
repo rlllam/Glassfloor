@@ -1,4 +1,7 @@
 # GlassFloor
+
+## Overview:
+Jupyter Notebook
 A scraping and analysis project on Glassdoor.
 1. Scrap search results
 2. Create analysis
