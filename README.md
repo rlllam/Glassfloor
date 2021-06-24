@@ -2,7 +2,7 @@
 
 ## Overview:
 A scraping and analysis project on Glassdoor
-1. Scrap search results
+1. Scrap search result
 2. Create analysis
 
 ## Scraper:
