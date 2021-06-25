@@ -1,4 +1,4 @@
-# Glassfloor
+# Glassfloor  
 
 ## Overview:
 A scraping and analysis project on Glassdoor
@@ -6,9 +6,9 @@ A scraping and analysis project on Glassdoor
 2. Create analysis
 
 ## Scraper:
-### Dependencies:
+#### Dependencies:
 selenium==3.141.0
-### Driver used:
+#### Driver used:
 ChromeDriver 90.0.4430.24
 
 ## Analysis tools:
