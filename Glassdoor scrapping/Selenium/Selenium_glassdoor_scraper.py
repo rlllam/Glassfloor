@@ -35,8 +35,7 @@ COMPANY_NAME_XPATH_2 = "]/div[2]/div[1]/a/span"
 JOB_TITLE_XPATH = "//*[@id='JDCol']/div/article/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]"
 JOB_LOCATION_XPATH = "//*[@id='JDCol']/div/article/div/div[1]/div/div/div[1]/div[3]/div[1]/div[3]"
 
-ESTIMATED_SALARY_XPATH_1 = "//*[@id='MainCol']/div[1]/ul/li["
-ESTIMATED_SALARY_XPATH_2 = "]/div[2]/div[3]/div[1]/span"
+ESTIMATED_SALARY_XPATH = "//*[@id='JDCol']/div/article/div/div[1]/div/div/div[1]/div[3]/div[1]/div[4]/span"
 
 EASY_APPLY_XPATH = "//*[@id='JDCol']/div/article/div/div[1]/div/div/div[1]/div[3]/div[2]/div/div[1]/div[1]/span/button/span"
 
@@ -161,8 +160,7 @@ def scrape_job(job_box, job_num):
             job_info['Job Title'] = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, JOB_TITLE_XPATH))).text
             job_info['Location'] = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, JOB_LOCATION_XPATH))).text
 
-            estimated_salary_xpath = ESTIMATED_SALARY_XPATH_1 + str(job_num) + ESTIMATED_SALARY_XPATH_2
-            job_info['Employer Estimated Salary'] = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, estimated_salary_xpath))).text if check_exists_by_xpath(estimated_salary_xpath) else None
+            job_info['Employer Estimated Salary'] = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, ESTIMATED_SALARY_XPATH))).text if check_exists_by_xpath(ESTIMATED_SALARY_XPATH) else None
 
             job_info['Easy Apply'] = True if check_exists_by_xpath(EASY_APPLY_XPATH) else False
             job_info['Special Label'] = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, SPECIAL_LABEL_XPATH))).text if check_exists_by_xpath(SPECIAL_LABEL_XPATH) else None
@@ -330,7 +328,7 @@ if __name__ == '__main__':
     driver.minimize_window() # Option to start minimized
 
     # Parameters for main function
-    starting_link = 'https://www.glassdoor.ca/Job/ontario-data-scientist-jobs-SRCH_IL.0,7_IS4080_KO8,22.htm'
+    starting_link = 'https://www.glassdoor.ca/Job/canada-data-science-jobs-SRCH_IL.0,6_IN3_KO7,19.htm?minRating=1.00'
     pages_to_scrape = 30
 
     # Store the time when scraping start
@@ -351,5 +349,5 @@ if __name__ == '__main__':
     # Export
     df.to_csv('scrapped jobs - ' + dt_string + '.csv', index=False)
     # df.to_excel('scrapped jobs - ' + dt_string + '.xlsx', index=False)
-    # df.to_csv('scrapped jobs - ' + dt_string + '.txt', index=False, sep='\t')
+    # df.to_csv('scrapped jobs - ' + dt_string + '.txt', index=Fals:ddCryingHug2: e, sep='\t')
     # df.to_json('scrapped jobs - ' + dt_string + '.json')
