@@ -22,7 +22,7 @@ Power BI
 ![alt text](https://github.com/rlllam/Glassfloor/blob/master/Glassdoor%20analysis/Power%20BI/analysis%20samples/glassdoor%20analysis_Page_2.png)
 
 ### Jupyter Notebook:
-![alt text](https://github.com/rlllam/Glassfloor/blob/master/Glassdoor%20analysis/Jupyter%20Notebook/analysis%20samples/1.png)
+![alt text](https://github.com/rlllam/Glassfloor/blob/master/Glassdoor%20analysis/Jupyter%20Notebook/analysis%20samples/11.png)
 ![alt text](https://github.com/rlllam/Glassfloor/blob/master/Glassdoor%20analysis/Jupyter%20Notebook/analysis%20samples/2.png)
 ![alt text](https://github.com/rlllam/Glassfloor/blob/master/Glassdoor%20analysis/Jupyter%20Notebook/analysis%20samples/3.png)
 ![alt text](https://github.com/rlllam/Glassfloor/blob/master/Glassdoor%20analysis/Jupyter%20Notebook/analysis%20samples/4.png)
